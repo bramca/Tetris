@@ -1,0 +1,12 @@
+{
+    "name": "tetris",
+    "version": "0.0.1",
+    "main": "server.js",
+    "author": "bram",
+    "description": "tetris spel",
+    "dependencies": {
+        "express": "^4.15.3",
+        "body-parser": "^1.17.2",
+        "fs": "^0.0.1-security"
+    }
+}
