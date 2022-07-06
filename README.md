@@ -1,6 +1,6 @@
 # Tetris
-*Created in 2017*<br>
 ![tetris game](./img/tetris_game.PNG)
+*Created in 2017*<br>
 A clone of the puzzle game created by Alexey Pajitnov in 1984.<br>
 The project is web based and written in `javascript` and `html`.<br>
 It uses [p5.js](https://p5js.org/) for the game objects and the game rendering. <br>
