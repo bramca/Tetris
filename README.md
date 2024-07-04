@@ -12,10 +12,10 @@ Or you run a simple http server in the root folder with the command `npm start`.
 If you run the web server it will keep the high scores in a scores.txt file.
 
 # Controls
-`arrow up` rotate the piece.<br>
-`arrow down` move the piece.<br>
-`arrow left/right` move the piece to the left/right.<br>
+`arrow up` or `k` rotate the piece.<br>
+`arrow down` or `j` move the piece.<br>
+`arrow left/right` or `h/l` move the piece to the left/right.<br>
 `space bar` let the piece fall down.<br>
-`h` toggle aid by seeing where the piece is going to fall.<br>
-`a` toggle AI, if enabled the computer will play for you.<br>
+`a` toggle aid by seeing where the piece is going to fall.<br>
+`c` toggle AI, if enabled the computer will play for you.<br>
 `p` pause the game

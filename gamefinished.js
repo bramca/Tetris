@@ -164,7 +164,8 @@ var sketch = function (p) {
         if (paused) {
             pause(p);
         }
-        if (p.keyIsDown(p.DOWN_ARROW) && !ai) {
+        // 74 check is for vim key support ('j')
+        if ((p.keyIsDown(p.DOWN_ARROW) || p.keyIsDown(74)) && !ai) {
             holddowncount++;
             if (holddowncount > 10 && p.frameCount%2 === 0) {
                 if (shape.lock(p, grid)) {
@@ -181,7 +182,8 @@ var sketch = function (p) {
         } else {
             holddowncount = 0;
         }
-        if (p.keyIsDown(p.LEFT_ARROW) && !ai) {
+        // 72 check is for vim key support ('h')
+        if ((p.keyIsDown(p.LEFT_ARROW) || p.keyIsDown(72)) && !ai) {
             holdleftdowncount++;
             if (!shape.blocksideleft(grid) && holdleftdowncount > 10) {
                 if (p.frameCount%2 === 0) {
@@ -191,7 +193,8 @@ var sketch = function (p) {
         } else {
             holdleftdowncount = 0;
         }
-        if (p.keyIsDown(p.RIGHT_ARROW) && !ai) {
+        // 76 check is for vim key support ('l')
+        if ((p.keyIsDown(p.RIGHT_ARROW) || p.keyIsDown(76)) && !ai) {
             holdrightdowncount++;
             if (!shape.blocksideright(grid) && holdrightdowncount > 10) {
                 if (p.frameCount%2 === 0) {
@@ -355,20 +358,24 @@ var sketch = function (p) {
     }
 
     p.keyPressed = function () {
-        if (p.keyCode === p.LEFT_ARROW && !ai) {
+        // 72 check is for vim key support ('h')
+        if ((p.keyCode === p.LEFT_ARROW || p.keyCode === 72) && !ai) {
             if (!shape.blocksideleft(grid)) {
                 shape.pos.x -= shape.size;
             }
-        } else if (p.keyCode === p.RIGHT_ARROW && !ai) {
+        // 76 check is for vim key support ('l')
+        } else if ((p.keyCode === p.RIGHT_ARROW || p.keyCode === 76) && !ai) {
             if (!shape.blocksideright(grid)) {
                 shape.pos.x += shape.size;
             }
-        } else if (p.keyCode === p.UP_ARROW && !ai) {
+        // 75 check is for vim key support ('k')
+        } else if ((p.keyCode === p.UP_ARROW || p.keyCode === 75) && !ai) {
             if (!shape.blockrotation(grid)) {
                 shape.rot++;
                 shape.rot %= 4;
             }
-        } else if (p.keyCode === p.DOWN_ARROW && !ai) {
+        // 74 check is for vim key support ('j')
+        } else if ((p.keyCode === p.DOWN_ARROW || p.keyCode === 74) && !ai) {
             if (shape.lock(p, grid)) {
                 lockedshapes.push(shape);
                 var co = shape.coords(shape.rot);
@@ -387,7 +394,7 @@ var sketch = function (p) {
                 p.loop();
                 paused = false;
             }
-        } else if (p.key === 'A') {
+        } else if (p.key === 'C') {
             ai = !ai;
         } else if (p.key === 'R') {
             if (gameover) {
@@ -395,7 +402,7 @@ var sketch = function (p) {
                 reset();
                 p.loop();
             }
-        } else if (p.key === 'H') {
+        } else if (p.key === 'A') {
             aid = !aid;
         } else if (p.keyCode === 32 && !ai) {
             var shapecp = JSON.parse(JSON.stringify(shape));
