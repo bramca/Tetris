@@ -1,11 +1,10 @@
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
-var fs = require("fs");
+import express from "express";
+import bodyParser from "body-parser";
+import fs from "fs";
 
-var app = express();
+const app = express();
 app.use(bodyParser.json());
-var port = 8080;
+const port = 8080;
 
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + "/libraries"));
@@ -41,6 +40,6 @@ app.post("/sendscore", function (req, res) {
     res.end("saved");
 });
 
-var server = app.listen(port, function () {
-    console.log("Server listening at http://localhost:" + port);
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
 });

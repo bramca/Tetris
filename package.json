@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "main": "server.js",
     "author": "bram",
-    "description": "tetris spel",
+    "type": "module",
+    "description": "tetris game",
     "dependencies": {
         "express": "^4.15.3",
         "body-parser": "^1.17.2",
