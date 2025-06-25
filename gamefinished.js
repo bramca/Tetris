@@ -532,9 +532,9 @@ LShape.prototype.lock = function(grid) {
     return false;
 }
 
-class LMirrorShape {
+class LMirrorShape extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
@@ -566,9 +566,9 @@ LMirrorShape.prototype.coords = function(rot) {
     }
 };
 
-class ZShape {
+class ZShape extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
@@ -600,9 +600,9 @@ ZShape.prototype.coords = function(rot) {
     }
 };
 
-class ZMirrorShape {
+class ZMirrorShape extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
@@ -635,9 +635,9 @@ ZMirrorShape.prototype.coords = function(rot) {
 
 };
 
-class Block {
+class Block extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
@@ -670,9 +670,9 @@ Block.prototype.coords = function(rot) {
 
 };
 
-class IndescribableShape {
+class IndescribableShape extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
@@ -705,9 +705,9 @@ IndescribableShape.prototype.coords = function(rot) {
 
 };
 
-class StickShape {
+class StickShape extends LShape {
     constructor(size, color, pos) {
-        LShape.call(this, size, color, pos);
+        super(size, color, pos);
     }
 }
 
